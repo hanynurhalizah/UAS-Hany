@@ -28,7 +28,7 @@ class BookController extends Controller
             'pages' => 'required|integer',
         ]);
         Book::create($validated);
-        return redirect()->route('books.index')->with('success', 'Buku berhasil ditambahkan.');
+        return redirect()->route('books.index')->with('success', 'Buku berhasil ditambahkan!');
     }
 
     public function show(Book $book)
@@ -51,12 +51,12 @@ class BookController extends Controller
             'pages' => 'required|integer',
         ]);
         $book->update($validated);
-        return redirect()->route('books.index')->with('success', 'Buku berhasil diupdate.');
+        return redirect()->route('books.index')->with('success', 'Buku berhasil diupdate!');
     }
 
     public function destroy(Book $book)
     {
         $book->delete();
-        return redirect()->route('books.index')->with('success', 'Buku berhasil dihapus.');
+        return redirect()->route('books.index')->with('success', 'Buku berhasil dihapus!');
     }
 }
